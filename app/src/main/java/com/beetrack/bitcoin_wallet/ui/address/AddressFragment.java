@@ -21,6 +21,7 @@ import com.beetrack.bitcoin_wallet.databinding.FragmentAddressBinding;
 import com.beetrack.bitcoin_wallet.helper.AddressPreferences;
 import com.beetrack.bitcoin_wallet.helper.QrConvertHelper;
 import com.beetrack.bitcoin_wallet.model.Address;
+import com.beetrack.bitcoin_wallet.model.BalanceAddress;
 import com.beetrack.bitcoin_wallet.utils.NetworkUtils;
 import com.bumptech.glide.Glide;
 import com.google.zxing.WriterException;
@@ -106,7 +107,7 @@ public class AddressFragment extends Fragment {
 
     /**
      *
-     *  Este Observer notifica que el usuario solicito guardar la addres
+     *  Este Observer notifica que el usuario solicito guardar la address
      *  y llama @notifySaveAddress
      */
     private Observer<Boolean> mSaveObserver = save -> {
@@ -134,6 +135,7 @@ public class AddressFragment extends Fragment {
         AddressPreferences.getInstance(getActivity()).setAddressPreferences(address);
         mBindingViewAddress.viewQR.textViewTitleAddressId.setText(R.string.address_enabled);
         mBindingViewAddress.textViewNotificationId.setText("");
+        mPreferences.setLastBalancePreferences(new BalanceAddress("0", "0", "0")); // se inicializa el balance address
         Navigation.findNavController(getActivity(), R.id.nav_host_fragment).navigate(R.id.navigation_wallet);
 
     }
