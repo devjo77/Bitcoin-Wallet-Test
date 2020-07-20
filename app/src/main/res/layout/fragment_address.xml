@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModelAddress"
+            type="com.beetrack.bitcoin_wallet.ui.address.AddressViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.address.AddressFragment">
+
+        <include
+            android:id="@+id/viewQR"
+            layout="@layout/addres_view"
+            app:viewModel="@{viewModelAddress}"/>
+
+
+        <Button
+            android:id="@+id/btnSaveAddressAddressId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/colorPrimary"
+            android:drawableLeft="@drawable/ic_baseline_save_24"
+            android:drawableTint="@drawable/button_text_color"
+            android:onClick="@{()->viewModelAddress.onClickSaveAddress()}"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text=" Guardar "
+            android:textColor="@drawable/button_text_color"
+
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnGenerateAddressId"
+            app:layout_constraintTop_toBottomOf="@+id/viewQR" />
+
+        <Button
+            android:id="@+id/btnGenerateAddressId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorPrimary"
+            android:drawableLeft="@drawable/ic_qr_code_scanner_24px"
+            android:drawableTint="@drawable/button_text_color"
+            android:onClick="@{()->viewModelAddress.onCLickGenerateAddress()}"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text=" Generar "
+            android:textColor="@drawable/button_text_color"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/btnSaveAddressAddressId"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewQR" />
+
+        <TextView
+            android:id="@+id/text_view_notification_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="@{viewModelAddress.address.notification}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewQR" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

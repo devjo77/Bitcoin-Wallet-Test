@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Beetrack Wallet</string>
+    <string name="title_address">Dirección de Bitcoin</string>
+    <string name="title_wallet">Wallet</string>
+    <string name="title_transactions">Transacciones</string>
+
+
+    <string name="address_duplicate">Ya esta almacenada esta dirección. </string>
+    <string name="address_disabled">Dirección no habilitada:</string>
+    <string name="address_enabled">Dirección habilitada.</string>
+    <string name="address_disabled_error">Dirección no generada.</string>
+
+    <string name="address_initialize"> Genere una dirección presionando el botón \"Generar\"</string>
+    <string name="address_wallet_initialize">Debe generar una dirección para habilitar el balance.</string>
+    <string name="address_for_save"> Su dirección fue generada exitosamente, para continuar puede habilitar la dirección presionando el botón \"Guardar\" o puede generar una nueva dirección.</string>
+
+    <string name="address_wait_msg">Por favor espere... \n Estamos generando una nueva direccion.</string>
+
+    <string name="address_dialog_title">Estamos generando una nueva direccion.</string>
+    <string name="address_dialog_msg">Por favor espere...</string>
+
+    <string name="final_balance">B. Final:</string>
+    <string name="unconfirmed_balance">B. Por confirmar:</string>
+    <string name="balance">B. Confirmados:</string>
+    <string name="address_dialog_title_wallet">Actualizando Wallet.</string>
+
+    <string name="network_not_available">Conexión a internet no disponible</string>
+    <string name="ask_before_saving">¿Desea guardar esta dirección?"</string>
+    <string name="dialog_cancel">Cancelar</string>
+    <string name="save">Guardar</string>
+    <string name="received">Recibido </string>
+
+</resources>
